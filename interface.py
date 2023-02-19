@@ -21,11 +21,11 @@ class MainWindow(QMainWindow):
         hLayout.addWidget(url_input)
         
         bFolder = QPushButton("Seleccionar Carpeta de Salida")
-        folder = QLabel("Carpeta Seleccionada: ")
+        self.folderSelected = QLabel("Carpeta seleccionada: ")
         
         hLayout2 = QHBoxLayout()
         hLayout2.addWidget(bFolder)
-        hLayout2.addWidget(folder)
+        hLayout2.addWidget(self.folderSelected)
 
         layout = QVBoxLayout()
         layout.addWidget(title)
@@ -40,7 +40,7 @@ class MainWindow(QMainWindow):
 
     def select_folder(self):
         self.folder = QFileDialog.getExistingDirectory(self, "Seleccionar carpeta", "")
-        self.folderSelected.setText(f"Carpeta de Salida seleccionada: {self.folder}")
+        self.folderSelected.setText(f"Carpeta Seleccionada: \n {self.folder}")
         
         
 if __name__ == '__main__':
