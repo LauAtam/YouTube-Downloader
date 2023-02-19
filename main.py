@@ -8,6 +8,3 @@ def download(link, path):
     except:
         print("Ha ocurrido un error")
     print("La descarga se hizo de forma exitosa")
-    
-link = input("Ingrese la URL del video: ")
-download(link)
