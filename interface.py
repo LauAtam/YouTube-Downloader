@@ -40,7 +40,7 @@ class MainWindow(QMainWindow):
 
     def select_folder(self):
         self.folder = QFileDialog.getExistingDirectory(self, "Seleccionar carpeta", "")
-		self.folderSelected.setText(f"Carpeta de Salida seleccionada: {self.folder}")
+        self.folderSelected.setText(f"Carpeta de Salida seleccionada: {self.folder}")
         
         
 if __name__ == '__main__':
