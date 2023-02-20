@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QWidget, QApplication, QMainWindow, QHBoxLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout, QFileDialog
 from PySide6.QtCore import QSize
-from main import download
+from main import downloadMP4, downloadMP3
 import sys 
 
 class MainWindow(QMainWindow):
@@ -49,17 +49,23 @@ class MainWindow(QMainWindow):
 
         bFolder.clicked.connect(self.select_folder)
         bDownloadVideo.clicked.connect(self.downloadVideo)
+        bDownloadAudio.clicked.connect(self.downloadAudio)
     def select_folder(self):
         self.folder = QFileDialog.getExistingDirectory(self, "Seleccionar carpeta", "")
         self.folderSelected.setText(f"Carpeta Seleccionada: \n {self.folder}")
     
     def downloadVideo(self):
         if self.folder != '' and self.url_input.text() != '' :
-            download(self.url_input.text(), self.folder)
+            downloadMP4(self.url_input.text(), self.folder)
         else: 
             pass
     
-    #audio    
+    def downloadAudio(self):
+        if self.folder != '' and self.url_input.text() != '' :
+            downloadMP3(self.url_input.text(), self.folder)
+        else:
+            pass
+        
 if __name__ == '__main__':
     app = QApplication()
     window = MainWindow()
