@@ -5,12 +5,12 @@ import sys
 
 class MainWindow(QMainWindow):
     title = "YouTube Downloader"
-    qss = ""
+    qss = "font-size: 16px"
     def __init__(self):
         super().__init__()
         self.setWindowTitle(self.title)
         self.setStyleSheet(self.qss)
-        self.setMinimumSize(QSize(300,200))
+        self.setMinimumSize(QSize(400,250))
         self.interface()
     def interface(self):
         title = QLabel(self.title)
@@ -25,15 +25,13 @@ class MainWindow(QMainWindow):
         bFolder = QPushButton("Seleccionar Carpeta de Salida")
         self.folderSelected = QLabel("Carpeta seleccionada: ")
         
-        
-
         bDownloadVideo = QPushButton("Descargar Video")
         bDownloadAudio = QPushButton("Descargar Audio")
 
         hLayoutD = QHBoxLayout()
         hLayoutD.addWidget(bDownloadVideo)
         hLayoutD.addWidget(bDownloadAudio)
-
+        hLayoutD
         footer = QLabel()
         
         layout = QVBoxLayout()
